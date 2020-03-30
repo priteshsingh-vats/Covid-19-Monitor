@@ -1,2 +1,3 @@
-# pritesh.singh.vats.7739-gmail.com
+
 covid-19Monitor
+The Dependencies required or the node modules you need to install is under the package.json

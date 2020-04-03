@@ -1,127 +1,149 @@
 <html>
-    <head>
-       <title>Covid-19</title>
+
+<head>
+    <title>CoroZone</title>
     <link rel="stylesheet" href="/app1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpeg"
+    href="https://th.bing.com/th/id/OIP.3cwl5OI9IgTFZdVCNB3eVwHaE8?w=206&h=160&c=7&o=5&pid=1.7">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/accordion.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162691988-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-162691988-1');
+    </script>
 </head>
+
 <body>
-<style>
-    h1
-{
-    text-align:center;
-     font-family: 'Courier New', Courier, monospace;
-     background: black;
-     color: white;
-     padding-top: 10px;
-     padding-bottom: 10px;
-}
-footer
-{
-    text-align:center;
-     font-family: 'Courier New', Courier, monospace;
-     background: black;
-     color: white;
-     padding-top: 10px;
-     padding-bottom: 10px;
-}
+    <style>
+        h1 {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background: black;
+            color: white;
+            padding: 10px;
+        }
 
-#ac
-{
-    color:gray;
-}
-#cc
-{
-    color:orange;
-}
-#de
-{
-    color:red
-}
-#re
-{
-    color:green;
-}
-#al
-{
-    color:red;
-    border:1px solid red;
-    border-radius: 20px;
-    padding-left:5px;
-    padding-right:5px;
-}
-</style>
+        footer {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background: black;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-<h1> Covid-19  Monitor  India </h1> 
-<button class="btn btn-danger" type="button" disabled>
-    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-    Live Updates...
-  </button>
-<div class="container">
-    <br>
-    <h5> Total Number of Confirmed cases: <span id="cc"><%=p.total_values.confirmed %></span></h5>
-    <hr id="q">
-    <h5> Total Number of Active cases: <span id="ac"><%= p.total_values.active %></span></h5>
-    <hr id="q">
-    <h5> Total Number of Deaths cases: <span id="de"><%= p.total_values.deaths %></span></h5>
-    <hr id="q">
-    <h5> Total Number of Recovered cases: <span id="re"><%= p.total_values.recovered %></span></h5>
+        #ac {
+            color: gray;
+        }
+
+        #cc {
+            color: orange;
+        }
+
+        #de {
+            color: red
+        }
+
+        #re {
+            color: green;
+        }
+
+        #al {
+            color: red;
+            border: 1px solid red;
+            border-radius: 20px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span {
+            color: red;
+        }
+
+        @media only screen and (max-width:500px) {
+
+            /* For mobile phones: */
+            table {
+                font-size: 9.6px;
+            }
+        }
+    </style>
+
+    <h1 style="font-size:3.5vw;"> Covid-19 Monitor India <i class="India flag"></i> </h1>
+
+    <button class="btn btn-danger" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        Live Updates
+    </button>
+    <br /><br />
+    <div class="container">
+        <h5> Total Number of Confirmed cases: <span id="cc"><%=p.total_values.confirmed %></span></h5>
+        <hr id="q">
+        <h5> Total Number of Active cases: <span id="ac"><%= p.total_values.active %></span></h5>
+        <hr id="q">
+        <h5> Total Number of Deaths cases: <span id="de"><%= p.total_values.deaths %></span></h5>
+        <hr id="q">
+        <h5> Total Number of Recovered cases: <span id="re"><%= p.total_values.recovered %></span></h5>
+        <hr id="q">
+        <h5> Total Number of Migrated cases: <span id="re">1</span></h5>
     </div>
     <br>
-<table class="table table-striped">
-<thead class="thead-dark">
-<tr>
-<th scope="col">State</th>
-<th scope="col">Active</th>
-<th scope="col">Confirmed</th>
-<th scope="col">Death</th>
-<th scope="col">Recovered</th>
-
-</tr>
-</thead>
-<tbody>
-   
-<%Object.keys(p.state_wise).forEach(function(key) {%>
-    <tr>
-       <% if(key=="Unknown"){%>
-
-        <%}else{%>
-            <th scope="row"> <%=key%></th> 
-       <% }%>
-    <%Object.keys(p.state_wise[key]).forEach(function(key1) {%>
-       
-        <%if(key1==="lastupdatedtime"||key1==="delta"||key1==="district"||key1==="state"){%>
-            
-
-             <%}else{%>
-         <td> <%=p.state_wise[key][key1]%></td> 
-             <%}%>
-           
-
-        
-        
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">State</th>
+                <th scope="col">Active</th>
+                <th scope="col">Confirmed</th>
+                <th scope="col">Death</th>
+                <th scope="col">Recovered</th>
+                <th scope="col">State Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%Object.keys(p.state_wise).forEach(function(key) {%>
+            <tr>
+                <% if(key=="Unknown"){%>
+                <%}else{%>
+                <th scope="row"> <%=key%></th>
+                <% }%>
+                <%Object.keys(p.state_wise[key]).forEach(function(key1) {%>
+                <%if(key1==="active"||key1==="confirmed"||key1==="deaths"||key1==="recovered"||key1==="statecode"){%>
+                    <td> <%=p.state_wise[key][key1]%></td>
+                <%}else{%>
+               
+                <%}%>
         <%})%>
-    </tr>
-  <%})%>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+    <footer>&#169; 2020 Made with<span> ❤</span> by <a href="https://priteshsingh-vats.github.io/pweb1/"
+            target="_blank">Pritesh
+            Singh</a> and <a href="https://imarchit19.github.io/Personal-Website" target="_blank">Archit Gupta</a><br>
+        All Rights
+        Reserved</footer>
+</body>
 
-</tbody>
-</table>
-<footer>&#169; 2020 Made with ❤ by Pritesh singh<br> All Rights Reserved</footer>
-    </body>
-    </html>
-
-
-
-      
- 
-
-  
-     
- 
-   
-   
-
-
+</html>

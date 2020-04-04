@@ -103,6 +103,10 @@
             .butn {
                 width: 300px;
             }
+
+            .india-case {
+                padding-left: 5px;
+            }
         }
 
         .sidebar {
@@ -158,17 +162,13 @@
         }
 
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
+        @media only screen and (max-width: 768px) {
             .sidebar {
                 padding-top: 15px;
             }
 
             .sidebar a {
                 font-size: 18px;
-            }
-
-            .india-case {
-                padding-left: 5;
             }
         }
 
@@ -188,6 +188,10 @@
             border-bottom: none;
             margin: 10px auto 10px;
             margin-right: 70%;
+        }
+
+        .india-case {
+            margin: auto;
         }
     </style>
 
@@ -218,9 +222,9 @@
     <br /><br />
 
     <div class="row">
-        <div class="col-lg-4 col-md-12">
+        <div class="col-lg-6 col-md-12">
             <div class="card" style="border: 0px;">
-                <div class="card-body india-case" style="padding-right: 5; padding-left: 5;">
+                <div class="card-body india-case">
                     <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
                         <h5> Confirmed cases: <span class="badge badge-light"><%=p.total_values.confirmed %></span>
                         </h5>
@@ -241,38 +245,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-12" style="padding-top:15;">
+        <div class="col-lg-6 col-md-12" style="padding-top:15;">
             <div class="card" style="border: 0px;">
                 <div class="card-body" style="padding-left: 25;width: 75%; text-align: justify;">
                     <h5 class="card-title">Donate to PMNRF</h5>
                     <p class="card-text">Prime Minister's National Relief Fund (PMNRF) was established entirely with
                         public contributions and does not get any budgetary support.</p>
                     <a href="https://pmnrf.gov.in/en/online-donation" target=_blank"" class="btn btn-primary">Donate</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-12">
-            <div class="card" style="border: 0px;">
-                <div class="card-body" style="padding-right: 5">
-                    <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
-                        <h5> Global Stats
-                        </h5>
-                    </button>
-                    <button style="width: 350px;" class=" butn btn btn-primary btn-block btn-lg">
-                        <h5> Active cases: <span class="badge badge-light">858542</span>
-                        </h5>
-                    </button>
-                    <button style="width: 350px;" class=" butn btn btn-danger btn-block btn-lg">
-                        <h5> Deaths cases: <span class="badge badge-light">62488</span>
-                        </h5>
-                    </button>
-                    <button style="width: 350px;" class=" butn btn btn-info btn-block btn-lg">
-                        <h5> Recovered cases: <span class="badge badge-light">241742</span>
-                        </h5>
-                    </button>
-                    <button style="width: 350px;" class=" butn btn btn-secondary btn-block btn-lg">
-                        <h5>Confirmed cases: <span class="badge badge-light">1162772</span></h5>
-                    </button>
                 </div>
             </div>
         </div>

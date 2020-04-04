@@ -285,10 +285,20 @@
                 <th scope="row"> <%=key%></th>
                 <% }%>
                 <%Object.keys(p.state_wise[key]).forEach(function(key1) {%>
-                <%if(key1==="active"||key1==="confirmed"||key1==="deaths"||key1==="recovered"||key1==="statecode"){%>
-                <td> <%=p.state_wise[key][key1]%></td>
-                <%}else{%>
-
+                <%if(key1==="active"){%>
+                <td><span class="badge badge-primary"> <%=p.state_wise[key][key1]%></span></td>
+                <%}%>
+                <%if(key1==="confirmed"){%>
+                <td><span class="badge badge-warning"> <%=p.state_wise[key][key1]%></span></td>
+                <%}%>
+                <%if(key1==="deaths"){%>
+                <td><span class="badge badge-danger"> <%=p.state_wise[key][key1]%></span></td>
+                <%}%>
+                <%if(key1==="recovered"){%>
+                <td><span class="badge badge-info"> <%=p.state_wise[key][key1]%></span></td>
+                <%}%>
+                <%if(key1==="statecode"){%>
+                <td><span class="badge badge-secondary"> <%=p.state_wise[key][key1]%></span></td>
                 <%}%>
         <%})%>
             </tr>

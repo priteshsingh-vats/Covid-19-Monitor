@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/app1.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/jpeg"
-    href="https://th.bing.com/th/id/OIP.3cwl5OI9IgTFZdVCNB3eVwHaE8?w=206&h=160&c=7&o=5&pid=1.7">
+        href="https://th.bing.com/th/id/OIP.3cwl5OI9IgTFZdVCNB3eVwHaE8?w=206&h=160&c=7&o=5&pid=1.7">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
@@ -32,6 +32,17 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-162691988-1');
+    </script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
     </script>
 </head>
 
@@ -89,9 +100,102 @@
                 font-size: 9.6px;
             }
         }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .openbtn:hover {
+            background-color: #444;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 10px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        .btn.disabled,
+        .btn:disabled {
+            opacity: 1;
+            margin-left: 10;
+        }
+
+        .precautions {
+            text-align: justify;
+            padding: 20px;
+            color: white;
+        }
     </style>
 
     <h1 style="font-size:3.5vw;"> Covid-19 Monitor India <i class="India flag"></i> </h1>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <h5 style="color: aqua; padding: 5px;">Do's</h5>
+        <ol class="precautions">
+            <li>Practice frequent hand washing. Wash hands with soap and water or use alcohol based hand rub.</li>
+            <li>Cover your nose and mouth with handkerchief / tissue while sneezing and coughing.</li>
+        </ol>
+        <h5 style="color: aqua; padding: 5px;">Dont's</h5>
+        <ol class="precautions">
+            <li>Have a close contact with anyone, if you're experiencing cough and fever.</li>
+            <li>Touch your eyes, nose and mouth.</li>
+        </ol>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ Precautions</button>
+    </div>
 
     <button class="btn btn-danger" type="button" disabled>
         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
@@ -130,9 +234,9 @@
                 <% }%>
                 <%Object.keys(p.state_wise[key]).forEach(function(key1) {%>
                 <%if(key1==="active"||key1==="confirmed"||key1==="deaths"||key1==="recovered"||key1==="statecode"){%>
-                    <td> <%=p.state_wise[key][key1]%></td>
+                <td> <%=p.state_wise[key][key1]%></td>
                 <%}else{%>
-               
+
                 <%}%>
         <%})%>
             </tr>

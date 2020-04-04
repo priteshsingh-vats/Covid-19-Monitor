@@ -166,6 +166,10 @@
             .sidebar a {
                 font-size: 18px;
             }
+
+            .india-case {
+                padding-left: 5;
+            }
         }
 
         .btn.disabled,
@@ -213,42 +217,62 @@
     </button>
     <br /><br />
 
-    <div class="row" style="margin-left: auto; margin-right: auto; padding-right: 250px;
-    padding-left: 250;">
-        <div class="col-sm-6">
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
             <div class="card" style="border: 0px;">
-                <div class="card-body">
+                <div class="card-body india-case" style="padding-right: 5; padding-left: 5;">
                     <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
-                        <h5> Total Number of Confirmed cases: <span
-                                class="badge badge-light"><%=p.total_values.confirmed %></span>
+                        <h5> Confirmed cases: <span class="badge badge-light"><%=p.total_values.confirmed %></span>
                         </h5>
                     </button>
                     <button style="width: 350px;" class=" butn btn btn-primary btn-block btn-lg">
-                        <h5> Total Number of Active cases: <span
-                                class="badge badge-light"><%= p.total_values.active %></span></h5>
+                        <h5> Active cases: <span class="badge badge-light"><%= p.total_values.active %></span></h5>
                     </button>
                     <button style="width: 350px;" class=" butn btn btn-danger btn-block btn-lg">
-                        <h5> Total Number of Deaths cases: <span
-                                class="badge badge-light"><%= p.total_values.deaths %></span></h5>
+                        <h5> Deaths cases: <span class="badge badge-light"><%= p.total_values.deaths %></span></h5>
                     </button>
                     <button style="width: 350px;" class=" butn btn btn-info btn-block btn-lg">
-                        <h5> Total Number of Recovered cases: <span
-                                class="badge badge-light"><%= p.total_values.recovered %></span>
+                        <h5> Recovered cases: <span class="badge badge-light"><%= p.total_values.recovered %></span>
                         </h5>
                     </button>
                     <button style="width: 350px;" class=" butn btn btn-secondary btn-block btn-lg">
-                        <h5> Total Number of Migrated cases: <span class="badge badge-light">1</span></h5>
+                        <h5> Migrated cases: <span class="badge badge-light">1</span></h5>
                     </button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card" style="border: 0;">
-                <div class="card-body">
+        <div class="col-lg-4 col-md-12" style="padding-top:15;">
+            <div class="card" style="border: 0px;">
+                <div class="card-body" style="padding-left: 25;width: 75%; text-align: justify;">
                     <h5 class="card-title">Donate to PMNRF</h5>
                     <p class="card-text">Prime Minister's National Relief Fund (PMNRF) was established entirely with
                         public contributions and does not get any budgetary support.</p>
                     <a href="https://pmnrf.gov.in/en/online-donation" target=_blank"" class="btn btn-primary">Donate</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="card" style="border: 0px;">
+                <div class="card-body" style="padding-right: 5">
+                    <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
+                        <h5> Global Stats
+                        </h5>
+                    </button>
+                    <button style="width: 350px;" class=" butn btn btn-primary btn-block btn-lg">
+                        <h5> Active cases: <span class="badge badge-light">858542</span>
+                        </h5>
+                    </button>
+                    <button style="width: 350px;" class=" butn btn btn-danger btn-block btn-lg">
+                        <h5> Deaths cases: <span class="badge badge-light">62488</span>
+                        </h5>
+                    </button>
+                    <button style="width: 350px;" class=" butn btn btn-info btn-block btn-lg">
+                        <h5> Recovered cases: <span class="badge badge-light">241742</span>
+                        </h5>
+                    </button>
+                    <button style="width: 350px;" class=" butn btn btn-secondary btn-block btn-lg">
+                        <h5>Confirmed cases: <span class="badge badge-light">1162772</span></h5>
+                    </button>
                 </div>
             </div>
         </div>

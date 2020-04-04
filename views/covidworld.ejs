@@ -99,6 +99,10 @@
             table {
                 font-size: 9.6px;
             }
+
+            .butn {
+                width: 300px;
+            }
         }
 
         .sidebar {
@@ -175,6 +179,12 @@
             padding: 20px;
             color: white;
         }
+
+        hr {
+            border-bottom: none;
+            margin: 10px auto 10px;
+            margin-right: 70%;
+        }
     </style>
 
     <h1 style="font-size:3.5vw;"> Covid-19 Monitor India <i class="India flag"></i> </h1>
@@ -202,19 +212,53 @@
         Live Updates
     </button>
     <br /><br />
-    <div class="container">
-        <h5> Total Number of Confirmed cases: <span id="cc"><%=p.total_values.confirmed %></span></h5>
-        <hr id="q">
-        <h5> Total Number of Active cases: <span id="ac"><%= p.total_values.active %></span></h5>
-        <hr id="q">
-        <h5> Total Number of Deaths cases: <span id="de"><%= p.total_values.deaths %></span></h5>
-        <hr id="q">
-        <h5> Total Number of Recovered cases: <span id="re"><%= p.total_values.recovered %></span></h5>
-        <hr id="q">
-        <h5> Total Number of Migrated cases: <span id="re">1</span></h5>
+
+    <div class="row" style="margin-left: auto; margin-right: auto; padding-right: 250px;
+    padding-left: 250;">
+        <div class="col-sm-6">
+            <div class="card" style="border: 0px;">
+                <div class="card-body">
+                    <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
+                        <h5> Total Number of Confirmed cases: <span
+                                class="badge badge-light"><%=p.total_values.confirmed %></span>
+                        </h5>
+                    </button>
+                    <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
+                        <h5> Total Number of Active cases: <span
+                                class="badge badge-light"><%= p.total_values.active %></span></h5>
+                    </button>
+                    <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
+                        <h5> Total Number of Deaths cases: <span
+                                class="badge badge-light"><%= p.total_values.deaths %></span></h5>
+                    </button>
+                    <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
+                        <h5> Total Number of Recovered cases: <span
+                                class="badge badge-light"><%= p.total_values.recovered %></span>
+                        </h5>
+                    </button>
+                    <button style="width: 350px;" class=" butn btn btn-warning btn-block btn-lg">
+                        <h5> Total Number of Migrated cases: <span class="badge badge-light">1</span></h5>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card" style="border: 0;">
+                <div class="card-body">
+                    <h5 class="card-title">Donate to PMNRF</h5>
+                    <p class="card-text">Prime Minister's National Relief Fund (PMNRF) was established entirely with
+                        public contributions and does not get any budgetary support.</p>
+                    <a href="https://pmnrf.gov.in/en/online-donation" target=_blank"" class="btn btn-primary">Donate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: auto; margin-right: auto;" class="container">
+
     </div>
     <br>
-    <table class="table table-striped">
+    <table style="width: 100%; margin-left: auto; margin-right: auto;"
+        class="table table-bordered table-striped table-hover table-warning">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">State</th>

@@ -48,12 +48,17 @@
 
 <body>
     <style>
+        body {
+            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        }
+
         h1 {
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
             background: black;
             color: white;
             padding: 10px;
+            margin: 0;
         }
 
         footer {
@@ -91,6 +96,47 @@
 
         span {
             color: red;
+        }
+
+        /* Animation */
+
+        @keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+        }
+
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-fill-mode: both
+        }
+
+        .animatedFadeInUp {
+            opacity: 0
+        }
+
+        .fadeInUp {
+            opacity: 0;
+            animation-name: fadeInUp;
+            -webkit-animation-name: fadeInUp;
         }
 
         @media only screen and (max-width:500px) {
@@ -161,6 +207,10 @@
             padding: 10px;
         }
 
+        .table {
+            margin-bottom: 0;
+        }
+
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
         @media only screen and (max-width: 768px) {
             .sidebar {
@@ -226,7 +276,7 @@
     </button>
     <br /><br />
 
-    <div class="row">
+    <div class="row animated animatedFadeInUp fadeInUp">
         <div class="col-lg-6 col-md-12">
             <div class="card" style="border: 0px;">
                 <div class="card-body india-case">
@@ -266,7 +316,7 @@
     </div>
     <br>
     <table style="width: 100%; margin-left: auto; margin-right: auto;"
-        class="table table-bordered table-striped table-hover table-warning">
+        class="table table-bordered table-striped table-hover table-warning animated animatedFadeInUp fadeInUp">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">State</th>

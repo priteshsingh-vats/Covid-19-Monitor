@@ -231,17 +231,17 @@
             <div class="card" style="border: 0px;">
                 <div class="card-body india-case">
                     <button style="width: 300px;" class=" butn btn btn-warning btn-block btn-lg">
-                        <h5> Confirmed cases: <span class="badge badge-light"><%=p.total_values.confirmed %></span>
+                        <h5> Confirmed cases: <span class="badge badge-light"><%=p.statewise[0].confirmed %></span>
                         </h5>
                     </button>
                     <button style="width: 300px;" class=" butn btn btn-primary btn-block btn-lg">
-                        <h5> Active cases: <span class="badge badge-light"><%= p.total_values.active %></span></h5>
+                        <h5> Active cases: <span class="badge badge-light"><%= p.statewise[0].active %></span></h5>
                     </button>
                     <button style="width: 300px;" class=" butn btn btn-danger btn-block btn-lg">
-                        <h5> Deaths cases: <span class="badge badge-light"><%= p.total_values.deaths %></span></h5>
+                        <h5> Deaths cases: <span class="badge badge-light"><%= p.statewise[0].deaths %></span></h5>
                     </button>
                     <button style="width: 300px;" class=" butn btn btn-info btn-block btn-lg">
-                        <h5> Recovered cases: <span class="badge badge-light"><%= p.total_values.recovered %></span>
+                        <h5> Recovered cases: <span class="badge badge-light"><%= p.statewise[0].recovered %></span>
                         </h5>
                     </button>
                     <button style="width: 300px;" class=" butn btn btn-secondary btn-block btn-lg">
@@ -278,27 +278,27 @@
             </tr>
         </thead>
         <tbody>
-            <%Object.keys(p.state_wise).forEach(function(key) {%>
+            <%Object.keys(p.statewise).forEach(function(key) {%>
             <tr>
-                <% if(key=="Unknown"){%>
+                <% if(p.statewise[key].state=="Unknown"){%>
                 <%}else{%>
-                <th scope="row"> <%=key%></th>
+                <th scope="row"> <%=p.statewise[key].state%></th>
                 <% }%>
-                <%Object.keys(p.state_wise[key]).forEach(function(key1) {%>
+                <%Object.keys(p.statewise[key]).forEach(function(key1) {%>
                 <%if(key1==="active"){%>
-                <td><span class="badge badge-primary"> <%=p.state_wise[key][key1]%></span></td>
+                <td><span class="badge badge-primary"> <%=p.statewise[key][key1]%></span></td>
                 <%}%>
                 <%if(key1==="confirmed"){%>
-                <td><span class="badge badge-warning"> <%=p.state_wise[key][key1]%></span></td>
+                <td><span class="badge badge-warning"> <%=p.statewise[key][key1]%></span></td>
                 <%}%>
                 <%if(key1==="deaths"){%>
-                <td><span class="badge badge-danger"> <%=p.state_wise[key][key1]%></span></td>
+                <td><span class="badge badge-danger"> <%=p.statewise[key][key1]%></span></td>
                 <%}%>
                 <%if(key1==="recovered"){%>
-                <td><span class="badge badge-info"> <%=p.state_wise[key][key1]%></span></td>
+                <td><span class="badge badge-info"> <%=p.statewise[key][key1]%></span></td>
                 <%}%>
                 <%if(key1==="statecode"){%>
-                <td><span class="badge badge-secondary"> <%=p.state_wise[key][key1]%></span></td>
+                <td><span class="badge badge-secondary"> <%=p.statewise[key][key1]%></span></td>
                 <%}%>
         <%})%>
             </tr>

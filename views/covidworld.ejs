@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/jpeg"
         href="https://th.bing.com/th/id/OIP.3cwl5OI9IgTFZdVCNB3eVwHaE8?w=206&h=160&c=7&o=5&pid=1.7">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/accordion.min.css">
@@ -48,17 +49,12 @@
 
 <body>
     <style>
-        body {
-            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        }
-
         h1 {
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
             background: black;
             color: white;
             padding: 10px;
-            margin: 0;
         }
 
         footer {
@@ -93,50 +89,8 @@
             padding-left: 5px;
             padding-right: 5px;
         }
-
         span {
             color: red;
-        }
-
-        /* Animation */
-
-        @keyframes fadeInUp {
-            from {
-                transform: translate3d(0, 40px, 0)
-            }
-
-            to {
-                transform: translate3d(0, 0, 0);
-                opacity: 1
-            }
-        }
-
-        @-webkit-keyframes fadeInUp {
-            from {
-                transform: translate3d(0, 40px, 0)
-            }
-
-            to {
-                transform: translate3d(0, 0, 0);
-                opacity: 1
-            }
-        }
-
-        .animated {
-            animation-duration: 1s;
-            animation-fill-mode: both;
-            -webkit-animation-duration: 1s;
-            -webkit-animation-fill-mode: both
-        }
-
-        .animatedFadeInUp {
-            opacity: 0
-        }
-
-        .fadeInUp {
-            opacity: 0;
-            animation-name: fadeInUp;
-            -webkit-animation-name: fadeInUp;
         }
 
         @media only screen and (max-width:500px) {
@@ -153,6 +107,8 @@
             .india-case {
                 padding-left: 5px;
             }
+
+
         }
 
         .sidebar {
@@ -207,10 +163,6 @@
             padding: 10px;
         }
 
-        .table {
-            margin-bottom: 0;
-        }
-
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
         @media only screen and (max-width: 768px) {
             .sidebar {
@@ -248,8 +200,19 @@
             margin-right: 15px;
             margin-left: 15px;
         }
+        .graph1
+        {
+            margin-left: 40px;
+            margin-right: 40px;
+            box-shadow: 5px 10px 18px #888888;
+            border-radius: 20px;
+           
+            padding-top: 5px;
+            padding-bottom: 5px;
+            
+        }
+        
     </style>
-
     <h1 style="font-size:3.5vw;"> Covid-19 Monitor India <i class="India flag"></i> </h1>
 
     <div id="mySidebar" class="sidebar">
@@ -276,7 +239,7 @@
     </button>
     <br /><br />
 
-    <div class="row animated animatedFadeInUp fadeInUp">
+    <div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="card" style="border: 0px;">
                 <div class="card-body india-case">
@@ -300,6 +263,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-lg-6 col-md-12" style="padding-top:15;">
             <div class="card" style="border: 0px;">
                 <div class="card-body" style="padding-left: 25;width: 75%; text-align: justify;">
@@ -311,12 +275,107 @@
             </div>
         </div>
     </div>
+    <div class="graph1">
+        <canvas id="myChart" height="9vh" width="40vw" ></canvas>
+    </div>
+<script>
+     var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: <%- JSON.stringify(labels); %>,
+        datasets: [{
+             label: 'Total Cases of corona',
+             backgroundColor:"red",
+             borderColor:"white",
+            data: <%- JSON.stringify(data); %>,
+        }]
+    },
+    options: {
+        scales: {
+        xAxes: [{
+            gridLines: {
+                display:false
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+                display:false
+            },
+           
+        }]
+    }
+    }
+});
+</script>
+<br>
+<div class="graph1">
+    <canvas id="myChart1" height="9vh" width="40vw" ></canvas>
+</div>
+<script>
+ var ctx = document.getElementById('myChart1').getContext('2d');
+var chart = new Chart(ctx, {
+type: 'bar',
+data: {
+    labels: <%- JSON.stringify(state); %>,
+    datasets: [{
+         label: 'State wise data',
+         backgroundColor:"orange",
+         borderColor:"white",
+        data: <%- JSON.stringify(scase); %>,
+    }]
+},
+options: {
+    scales: {
+    xAxes: [{
+        gridLines: {
+            display:false
+        }
+    }],
+    yAxes: [{
+        gridLines: {
+            display:false
+        },
+       
+    }]
+}
+}
+});
+</script>
+<br>
+<div class="graph1">
+    <canvas id="myChart2" height="9vh" width="40vw" ></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+   var chart = new Chart(ctx, {
+   type: 'doughnut',
+   data: {
+       labels: ['Confirmed','Active','Deaths','Recovered'],
+       datasets: [{
+            label: 'State wise data',
+           data:[<%=p.statewise[0].confirmed %>,<%= p.statewise[0].active %>,<%= p.statewise[0].deaths %>,<%= p.statewise[0].recovered %>],
+           backgroundColor:[
+               "#FFC107",
+               "#007BFF",
+               "#DC3545",
+               "#17A2BB",
+               "#6C757D"
+           ],
+       }]
+   },
+   options: {},
+   });
+</script>
+
+
+
     <div style="margin-left: auto; margin-right: auto;" class="container">
 
     </div>
     <br>
     <table style="width: 100%; margin-left: auto; margin-right: auto;"
-        class="table table-bordered table-striped table-hover table-warning animated animatedFadeInUp fadeInUp">
+        class="table table-bordered table-striped table-hover table-warning">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">State</th>
@@ -353,6 +412,7 @@
         <%})%>
             </tr>
             <%})%>
+
         </tbody>
     </table>
     <footer>&#169; 2020 Made with<span> ❤</span> by <a href="https://priteshsingh-vats.github.io/pweb1/"

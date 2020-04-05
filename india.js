@@ -16,10 +16,12 @@ var options = {
 request(options, function (error, response, body) {
 	if (error) throw new Error(error);
       p = JSON.parse(body);
-      for(var i=31;i<p.cases_time_series.length;i++) 
+      var j=0;
+      for(var i=31;i<p.cases_time_series.length;i=i+7) 
    {
-  labels[i-31] =p.cases_time_series[i].date;
- data[i-31] =p.cases_time_series[i].totalconfirmed;
+  labels[i-31-6*j] =p.cases_time_series[i].date;
+ data[i-31-6*j] =p.cases_time_series[i].totalconfirmed;
+ j++;
  }
  for(var i=1;i<p.statewise.length;i++)
  {

@@ -107,8 +107,10 @@
             .india-case {
                 padding-left: 5px;
             }
-
-
+            .container1 .box
+            {
+                width: 90%;
+            }
         }
 
         .sidebar {
@@ -172,6 +174,7 @@
             .sidebar a {
                 font-size: 18px;
             }
+           
         }
 
         .btn.disabled,
@@ -200,16 +203,30 @@
             margin-right: 15px;
             margin-left: 15px;
         }
-        .graph1
+        #graph1
         {
             margin-left: 40px;
             margin-right: 40px;
             box-shadow: 5px 10px 18px #888888;
             border-radius: 20px;
-           
-            padding-top: 5px;
-            padding-bottom: 5px;
-            
+        }
+        .container1
+        {
+            width: 100%;
+            height: auto;
+            display: flex;
+
+            justify-content: space-around;
+            flex-flow: wrap;
+        }
+        .box
+        {
+            width: 30%;
+            height: 300px;
+            box-sizing: border-box;
+            box-shadow: 5px 10px 18px #888888;
+            border-radius: 20px;
+            margin-top: 10px;
         }
         
     </style>
@@ -275,8 +292,17 @@
             </div>
         </div>
     </div>
-    <div class="graph1">
-        <canvas id="myChart" height="9vh" width="40vw" ></canvas>
+    <br>
+    <div class="container1">
+        <div class="box">
+        <canvas id="myChart" ></canvas>
+        </div>
+        <div  class="box">
+            <canvas id="myChart1"  ></canvas>
+        </div>
+        <div class="box">
+            <canvas id="myChart2"  ></canvas>
+        </div>
     </div>
 <script>
      var ctx = document.getElementById('myChart').getContext('2d');
@@ -292,6 +318,8 @@ var chart = new Chart(ctx, {
         }]
     },
     options: {
+        responsive:true,
+       maintainAspectRatio:false,
         scales: {
         xAxes: [{
             gridLines: {
@@ -308,10 +336,7 @@ var chart = new Chart(ctx, {
     }
 });
 </script>
-<br>
-<div class="graph1">
-    <canvas id="myChart1" height="9vh" width="40vw" ></canvas>
-</div>
+
 <script>
  var ctx = document.getElementById('myChart1').getContext('2d');
 var chart = new Chart(ctx, {
@@ -326,6 +351,8 @@ data: {
     }]
 },
 options: {
+    responsive:true,
+       maintainAspectRatio:false,
     scales: {
     xAxes: [{
         gridLines: {
@@ -342,10 +369,7 @@ options: {
 }
 });
 </script>
-<br>
-<div class="graph1">
-    <canvas id="myChart2" height="9vh" width="40vw" ></canvas>
-</div>
+
 <script>
     var ctx = document.getElementById('myChart2').getContext('2d');
    var chart = new Chart(ctx, {
@@ -364,7 +388,10 @@ options: {
            ],
        }]
    },
-   options: {},
+   options: {
+       responsive:true,
+       maintainAspectRatio:false,
+   },
    });
 </script>
 

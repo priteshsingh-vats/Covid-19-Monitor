@@ -92,6 +92,38 @@
         span {
             color: red;
         }
+        @keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0)
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+        }
+        @-webkit-keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0)
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+        }
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            -webkit-animation-duration: 1.3s;
+            -webkit-animation-fill-mode: both
+        }
+        .animatedFadeInUp {
+            opacity: 0
+        }
+        .fadeInUp {
+            opacity: 0;
+            animation-name: fadeInUp;
+            -webkit-animation-name: fadeInUp;
+        }
 
         @media only screen and (max-width:500px) {
 
@@ -164,6 +196,10 @@
             transition: margin-left .5s;
             padding: 10px;
         }
+        .table {
+            margin-bottom: 0;
+        }
+
 
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
         @media only screen and (max-width: 768px) {
@@ -222,7 +258,7 @@
         .box
         {
             width: 30%;
-            height: 300px;
+            height: 250px;
             box-sizing: border-box;
             margin-top: 10px;
         }
@@ -254,7 +290,7 @@
     </button>
     <br /><br />
 
-    <div class="row">
+    <div class="row  animated animatedFadeInUp fadeInUp">
         <div class="col-lg-6 col-md-12">
             <div class="card" style="border: 0px;">
                 <div class="card-body india-case">
@@ -291,7 +327,7 @@
         </div>
     </div>
     <br>
-    <div class="container1">
+    <div class="container1  animated animatedFadeInUp fadeInUp">
         <div class="box">
         <canvas id="myChart" ></canvas>
         </div>
@@ -373,10 +409,10 @@ options: {
    var chart = new Chart(ctx, {
    type: 'doughnut',
    data: {
-       labels: ['Migrated','Active','Deaths','Recovered'],
+       labels: ['Confirmed','Active','Deaths','Recovered'],
        datasets: [{
-            label: 'State wise data',
-           data:[1,<%= p.statewise[0].active %>,<%= p.statewise[0].deaths %>,<%= p.statewise[0].recovered %>],
+            label: '',
+           data:[<%=p.statewise[0].confirmed %>,<%= p.statewise[0].active %>,<%= p.statewise[0].deaths %>,<%= p.statewise[0].recovered %>],
            backgroundColor:[
                "#FFC107",
                "#007BFF",
@@ -400,7 +436,7 @@ options: {
     </div>
     <br>
     <table style="width: 100%; margin-left: auto; margin-right: auto;"
-        class="table table-bordered table-striped table-hover table-warning">
+        class="table table-bordered table-striped table-hover table-warning  animated animatedFadeInUp fadeInUp">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">State</th>

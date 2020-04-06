@@ -373,10 +373,10 @@ options: {
    var chart = new Chart(ctx, {
    type: 'doughnut',
    data: {
-       labels: ['Confirmed','Active','Deaths','Recovered'],
+       labels: ['Migrated','Active','Deaths','Recovered'],
        datasets: [{
             label: 'State wise data',
-           data:[<%=p.statewise[0].confirmed %>,<%= p.statewise[0].active %>,<%= p.statewise[0].deaths %>,<%= p.statewise[0].recovered %>],
+           data:[1,<%= p.statewise[0].active %>,<%= p.statewise[0].deaths %>,<%= p.statewise[0].recovered %>],
            backgroundColor:[
                "#FFC107",
                "#007BFF",

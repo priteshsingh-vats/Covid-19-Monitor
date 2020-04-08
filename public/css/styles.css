@@ -1,6 +1,9 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
 h1 {
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Inconsolata", monospace;
   background: black;
   color: white;
   padding: 10px;
@@ -218,11 +221,12 @@ hr {
 .marquee {
   padding: 10px 0 10px;
   line-height: 50px;
-  background-color: red;
+  background-color: #11999e;
   color: white;
   white-space: nowrap;
   overflow: hidden;
   box-sizing: border-box;
+  font-size: 18px;
 }
 .marquee p {
   display: inline-block;

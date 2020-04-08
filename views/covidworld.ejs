@@ -31,9 +31,45 @@
 </head>
 
 <body>
+    <div>
     <h1 style="font-size:3.5vw;" id = "top"> Covid-19 Monitor India <i class="India flag"></i> </h1>
-
-    <div id="mySidebar" class="sidebar">
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">CoroZone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Visualize</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Resources
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <strong>Stay Home. Stay Safe.</strong>
+                <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id="searchForm" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="search()" >Search</button>
+            </form> -->
+        </div>
+    </nav>
+    <div id="mySidebar" class="sidebar col-find">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <h5 style="color: aqua; padding: 5px;">Do's</h5>
         <ol class="precautions">
@@ -47,7 +83,7 @@
         </ol>
     </div>
 
-    <div id="main">
+    <div id="main" class="col-find">
         <button class="openbtn" onclick="openNav()">☰ Precautions</button>
     </div>
 
@@ -57,7 +93,7 @@
     </button>
     <br /><br />
 
-    <div class="row  animated animatedFadeInUp fadeInUp">
+    <div class="row  animated animatedFadeInUp fadeInUp col-find">
         <div class="col-lg-6 col-md-12">
             <div class="card" style="border: 0px;">
                 <div class="card-body india-case">
@@ -82,7 +118,7 @@
             </div>
         </div>
 
-        <div class="col-lg-6 col-md-12" style="padding-top:15;">
+        <div class="col-lg-6 col-md-12 col-find" style="padding-top:15;">
             <div class="card" style="border: 0px;">
                 <div class="card-body" style="padding-left: 25;width: 75%; text-align: justify;">
                     <h5 class="card-title">Donate to PMNRF</h5>
@@ -94,7 +130,7 @@
         </div>
     </div>
     <br>
-    <div class="container1  animated animatedFadeInUp fadeInUp">
+    <div class="container1 col-find animated animatedFadeInUp fadeInUp">
         <div class="box">
         <canvas id="myChart" ></canvas>
         </div>
@@ -104,6 +140,23 @@
         <div class="box">
             <canvas id="myChart2"  ></canvas>
         </div>
+    </div>
+    <div class="marquee">
+        <p style="color: black;"> <strong>PLEASE NOTE:</strong> Don't go out much only one person from each family should take responsibility to go out and bring household materials <strong>|</strong> 
+            The person who goes out should wear a full arm shirt and shoes <strong>|</strong> 
+            As soon as you enter home please keep your shoes outside don't wear the same inside the house. Immediately change your dress don't sit any where wearing the same dress. Take bath preferably head bath with soap. <strong>|</strong> 
+            People more than 60 - diabetic, heart or kidney disease patient should not go out. <strong>|</strong> 
+            Wash hand frequently with water and soap. <strong>|</strong> 
+            Don't touch your eyes nose with hands. <strong>|</strong> 
+            Wash all packed good items and vegetables thoroughly with water. <strong>|</strong> 
+            Don't gather much people in a room. <strong>|</strong> 
+            Keep distance from elderly. <strong>|</strong> 
+            Don't play outdoor games. <strong>|</strong> 
+            Don't play games involving more than 3 to 4 people at a time. <strong>|</strong> 
+            If anybody has fever cough then he or she should stay away from others. <strong>|</strong> 
+            Don't allow maids to come. <strong>|</strong> 
+            Eat healthy food avoid fried and junk foods bcoz you if you get I'll then need to go to doctor and going to doctor at this time chance of infection very high as doctor comes with contact with many others. <strong>|</strong>
+        </p>
     </div>
 <script>
      var ctx = document.getElementById('myChart').getContext('2d');
@@ -196,7 +249,6 @@
    }
 );
 </script>
-<br>
     <table style="width: 100%; margin-left: auto; margin-right: auto;"
         class="table table-bordered table-striped table-hover table-warning  animated animatedFadeInUp fadeInUp">
         <thead class="thead-dark">
@@ -238,7 +290,7 @@
 
         </tbody>
     </table>
-    <div class="bottom-container">
+    <div class="bottom-container col-find">
         <!-- LinkedIn -->
         <a class="footer-link" href="https://github.com/priteshsingh-vats/Covid-19-Monitor" target="_blank" rel="noopener"><i
                 class="fab fa-github fa-2x"></i></a>

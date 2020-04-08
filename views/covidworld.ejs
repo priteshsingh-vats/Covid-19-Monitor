@@ -14,6 +14,8 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- External CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a6e2755b4d.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162691988-1"></script>
     <script>
@@ -29,7 +31,7 @@
 </head>
 
 <body>
-    <h1 style="font-size:3.5vw;"> Covid-19 Monitor India <i class="India flag"></i> </h1>
+    <h1 style="font-size:3.5vw;" id = "top"> Covid-19 Monitor India <i class="India flag"></i> </h1>
 
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -236,11 +238,21 @@
 
         </tbody>
     </table>
-    <footer>&#169; 2020 Made with<span> ❤</span> by <a href="https://priteshsingh-vats.github.io/pweb1/"
+    <div class="bottom-container">
+        <!-- LinkedIn -->
+        <a class="footer-link" href="https://github.com/priteshsingh-vats/Covid-19-Monitor" target="_blank" rel="noopener"><i
+                class="fab fa-github fa-2x"></i></a>
+        <a class="footer-link" href="https://www.mohfw.gov.in" target="_blank" rel="noopener"><i
+                class="fas fa-info fa-2x"></i></a>
+        <a class="footer-link" href="#top"><i class="fas fa-arrow-up fa-2x"></i></a>
+    </div>
+    <footer>
+        &#169; 2020 Made with<span> ❤</span> by <a href="https://priteshsingh-vats.github.io/pweb1/"
             target="_blank">Pritesh
             Singh</a> and <a href="https://imarchit19.github.io/Personal-Website" target="_blank">Archit Gupta</a><br>
         All Rights
-        Reserved</footer>
+        Reserved
+    </footer>
     <!-- Sidebar Javascript -->
     <script src="js/sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

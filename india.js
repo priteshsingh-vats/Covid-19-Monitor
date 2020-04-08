@@ -6,10 +6,10 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.static("public"));
 var request = require("request");
 var p;
-var state=[];
-var scase =[];
-var  labels=[];
-var  data =[];
+var state = [];
+var scase = [];
+var labels = [];
+var data = [];
 var options = {
   method: 'GET',
   url: 'https://api.covid19india.org/data.json',
@@ -19,11 +19,11 @@ request(options, function (error, response, body) {
       p = JSON.parse(body);
       var j=0;
       for(var i=31;i<p.cases_time_series.length;i=i+7) 
-   {
-  labels[i-31-6*j] =p.cases_time_series[i].date;
- data[i-31-6*j] =p.cases_time_series[i].totalconfirmed;
- j++;
- }
+      {
+        labels[i-31-6*j] = p.cases_time_series[i].date;
+        data[i-31-6*j] = p.cases_time_series[i].totalconfirmed;
+        j++;
+      }
  for(var i=1;i<p.statewise.length-22;i++)
  {
    state[i-1]=p.statewise[i].statecode;
@@ -33,11 +33,12 @@ request(options, function (error, response, body) {
 
 app.get("/",function(req,res)
 {
-   res.render("covidworld.ejs",{p:p,
-  data:data,
-  labels:labels,
-  state:state,
-  scase:scase,
+   res.render("covidworld.ejs",{
+     p:p,
+     data:data,
+     labels:labels,
+     state:state,
+     scase:scase,
   })
 });
 app.listen((process.env.PORT||3000),function()

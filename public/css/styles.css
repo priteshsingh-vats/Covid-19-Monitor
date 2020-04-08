@@ -203,3 +203,15 @@ hr {
   box-sizing: border-box;
   margin-top: 10px;
 }
+
+.footer-link {
+  color: #11999e;
+  font-family: "Montserrat", sans-serif;
+  padding: 0 40 0;
+  text-decoration: none;
+}
+.bottom-container {
+  background-color: #202040;
+  padding: 10px 20px 10px;
+  text-align: center;
+}

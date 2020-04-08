@@ -24,9 +24,9 @@ request(options, function (error, response, body) {
  data[i-31-6*j] =p.cases_time_series[i].totalconfirmed;
  j++;
  }
- for(var i=1;i<p.statewise.length;i++)
+ for(var i=1;i<p.statewise.length-8;i++)
  {
-   state[i-1]=p.statewise[i].state;
+   state[i-1]=p.statewise[i].statecode;
    scase[i-1] =p.statewise[i].confirmed;
  }
 });

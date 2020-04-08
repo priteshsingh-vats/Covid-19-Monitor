@@ -3,6 +3,7 @@ var express = require("express");
 var app = express();
 var bodyparser = require("body-parser");
 app.use(bodyparser.urlencoded({extended:true}));
+app.use(express.static("public"));
 var request = require("request");
 var p;
 var state=[];

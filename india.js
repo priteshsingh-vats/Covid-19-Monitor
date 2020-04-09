@@ -41,6 +41,11 @@ app.get("/",function(req,res)
      scase:scase,
   })
 });
+
+app.get("/resources", function (req, res) {
+  res.render("resources.ejs");
+});
+
 app.listen((process.env.PORT||3000),function()
 {
     console.log("The server has started");

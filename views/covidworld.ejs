@@ -94,31 +94,31 @@
     var chart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: < % -JSON.stringify(labels); % > ,
-            datasets: [{
-                label: 'Total Cases of Corona',
-                backgroundColor: "red",
-                borderColor: "white",
-                data: < % -JSON.stringify(data); % > ,
+            labels: <%-JSON.stringify(labels); %> ,
+        datasets: [{
+            label: 'Total Cases of Corona',
+            backgroundColor: "red",
+            borderColor: "white",
+            data: <%-JSON.stringify(data); %> ,
             }]
         },
-        options: {
-            responsive: true,
+    options: {
+        responsive: true,
             maintainAspectRatio: false,
-            scales: {
-                xAxes: [{
-                    gridLines: {
-                        display: false
-                    }
-                }],
+                scales: {
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }],
                 yAxes: [{
                     gridLines: {
                         display: false
                     },
 
                 }]
-            }
         }
+    }
     });
 </script>
 
@@ -127,31 +127,31 @@
     var chart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: < % -JSON.stringify(state); % > ,
-            datasets: [{
-                label: 'State Wise Data',
-                backgroundColor: "orange",
-                borderColor: "white",
-                data: < % -JSON.stringify(scase); % > ,
+            labels: <%-JSON.stringify(state); %> ,
+        datasets: [{
+            label: 'State Wise Data',
+            backgroundColor: "orange",
+            borderColor: "white",
+            data: <%-JSON.stringify(scase); %> ,
             }]
         },
-        options: {
-            responsive: true,
+    options: {
+        responsive: true,
             maintainAspectRatio: false,
-            scales: {
-                xAxes: [{
-                    gridLines: {
-                        display: false
-                    }
-                }],
+                scales: {
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }],
                 yAxes: [{
                     gridLines: {
                         display: false
                     },
 
                 }]
-            }
         }
+    }
     });
 </script>
 
@@ -163,22 +163,21 @@
             labels: ['Migrated', 'Active', 'Deaths', 'Recovered'],
             datasets: [{
                 label: '',
-                data: [ < %= 1 % > , < %= p.statewise[0].active % > , < %= p.statewise[0].deaths % > , <
-                    %= p.statewise[0].recovered % >
+                data: [ <%=1%> , <%=p.statewise[0].active%> , <%=p.statewise[0].deaths%> , <%=p.statewise[0].recovered%>
                 ],
-                backgroundColor: [
-                    "#FFC107",
-                    "#007BFF",
-                    "#DC3545",
-                    "#17A2BB",
-                    "#6C757D"
-                ],
-            }]
-        },
+            backgroundColor: [
+                "#FFC107",
+                "#007BFF",
+                "#DC3545",
+                "#17A2BB",
+                "#6C757D"
+            ],
+        }]
+    },
         options: {
-            responsive: true,
-            maintainAspectRatio: false,
-        },
+        responsive: true,
+        maintainAspectRatio: false,
+    },
     });
 </script>
 <br>
@@ -224,13 +223,5 @@
 
         </tbody>
     </table>
-</div>
-<div class="bottom-container col-find">
-    <!-- LinkedIn -->
-    <a class="footer-link" href="https://github.com/priteshsingh-vats/Covid-19-Monitor" target="_blank"
-        rel="noopener"><i class="fab fa-github fa-2x"></i></a>
-    <a class="footer-link" href="https://www.mohfw.gov.in" target="_blank" rel="noopener"><i
-            class="fas fa-info fa-2x"></i></a>
-    <a class="footer-link" href="#top"><i class="fas fa-arrow-up fa-2x"></i></a>
 </div>
 <%- include('partials/footer.ejs'); -%>

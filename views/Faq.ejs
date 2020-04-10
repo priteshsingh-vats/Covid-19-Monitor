@@ -1,97 +1,133 @@
 <%- include('partials/header.ejs'); -%>
-<div class="container ">
-    <div class="panel-group" id="faqAccordion">
-        <div class="panel panel-default ">
-            <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                data-parent="#faqAccordion" data-target="#question0">
-                <h4 class="panel-title">
-                    <a href="#" class="ing">Q: What is Lorem Ipsum?</a>
-                </h4>
-
-            </div>
-            <div id="question0" class="panel-collapse collapse" style="height: 0px;">
-                <div class="panel-body">
-                    <h5><span class="label label-primary">Answer</span></h5>
-
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five <a
-                            href="http://jquery2dotnet.com/" class="label label-success">http://jquery2dotnet.com/</a>
-                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It
-                        was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default ">
-            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
-                data-parent="#faqAccordion" data-target="#question1">
-                <h4 class="panel-title">
-                    <a href="#" class="ing">Q: Why do we use it?</a>
-                </h4>
-
-            </div>
-            <div id="question1" class="panel-collapse collapse" style="height: 0px;">
-                <div class="panel-body">
-                    <h5><span class="label label-primary">Answer</span></h5>
-
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page
-                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                        distribution of letters, as opposed to using 'Content here, content here', making it look like
-                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
-                        purpose (injected humour and the like).</p>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default ">
-            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
-                data-parent="#faqAccordion" data-target="#question2">
-                <h4 class="panel-title">
-                    <a href="#" class="ing">Q: Where does it come from?</a>
-                </h4>
-
-            </div>
-            <div id="question2" class="panel-collapse collapse" style="height: 0px;">
-                <div class="panel-body">
-                    <h5><span class="label label-primary">Answer</span></h5>
-
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
-                        Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin
-                        words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
-                        classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-                        and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-                        written in 45 BC. This book is a treatise on the theory of ethics, very popular during the
-                        Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-                        section 1.10.32.</p>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default ">
-            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
-                data-parent="#faqAccordion" data-target="#question3">
-                <h4 class="panel-title">
-                    <a href="#" class="ing">Q: Where can I get some?</a>
-                </h4>
-
-            </div>
-            <div id="question3" class="panel-collapse collapse" style="height: 0px;">
-                <div class="panel-body">
-                    <h5><span class="label label-primary">Answer</span></h5>
-
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration in some form, by injected humour, or randomised words which don't look even slightly
-                        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                        anything embarrassing hidden in the middle of text. </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!--/panel-group-->
+<div class="container">
+    <blockquote class="blockquote text-center">
+        <p>We are only as strong as we are united, as weak as we are divided.</p>
+    </blockquote>
 </div>
+<div class="container" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="row" style="font-size: larger;">
+        <div class="col-lg-4">
+            <div class="nav nav-pills faq-nav" id="faq-tabs" role="tablist" aria-orientation="vertical">
+                <a href="#tab1" class="nav-link active" data-toggle="pill" role="tab" aria-controls="tab1"
+                    aria-selected="true">
+                    <i class="mdi mdi-help-circle"></i> Frequently Asked Questions
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="tab-content" id="faq-tab-content">
+                <div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1">
+                    <div class="accordion" id="accordion-tab-1">
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-1">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#accordion-tab-1-content-1" aria-expanded="false"
+                                        aria-controls="accordion-tab-1-content-1" style="font-size: larger;">Is this an
+                                        official source?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse show" id="accordion-tab-1-content-1"
+                                aria-labelledby="accordion-tab-1-heading-1" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>No, for official sources check resources tab.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-2">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#accordion-tab-1-content-2" aria-expanded="false"
+                                        aria-controls="accordion-tab-1-content-2" style="font-size: larger;">What is the
+                                        source of
+                                        information?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-1-content-2"
+                                aria-labelledby="accordion-tab-1-heading-2" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>The data fetched by us, is maintained by crowdsourced database organised
+                                        by covid19india.org, all credit goes to them.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-3">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#accordion-tab-1-content-3" aria-expanded="false"
+                                        aria-controls="accordion-tab-1-content-3" style="font-size: larger;">Who is
+                                        behind the project?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-1-content-3"
+                                aria-labelledby="accordion-tab-1-heading-3" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>Just two friends from BVCOE, New Delhi studying B.Tech (IT). You can contact us
+                                        with details below.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-4">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#accordion-tab-1-content-4" aria-expanded="false"
+                                        aria-controls="accordion-tab-1-content-4" style="font-size: larger;">Any problem
+                                        or feedback?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-1-content-4"
+                                aria-labelledby="accordion-tab-1-heading-4" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>Have you encountered any problem or have suggestions for us, contact us on our
+                                        social handles provided below.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-5">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#accordion-tab-1-content-5" aria-expanded="false"
+                                        aria-controls="accordion-tab-1-content-5" style="font-size: larger;">Why make
+                                        this?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-1-content-5"
+                                aria-labelledby="accordion-tab-1-heading-5" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>We wanted to build something
+                                        to spread awareness and spread true information not panic.</p>
+                                    <p><strong>Example: </strong>Cruel though they may be...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-6">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#accordion-tab-1-content-6" aria-expanded="false"
+                                        aria-controls="accordion-tab-1-content-6" style="font-size: larger;">Is this
+                                        Open-Source?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-1-content-6"
+                                aria-labelledby="accordion-tab-1-heading-6" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>Yes, you can checkout our source code on GitHub (all details are provided below)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--container-->
 <%- include('partials/footer.ejs'); -%>

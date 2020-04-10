@@ -1,55 +1,78 @@
 <%- include('partials/header.ejs'); -%>
-  
+<div id="mySidebar" class="sidebar col-find">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <h5 style="color: aqua; padding: 5px;">Do's</h5>
+    <ol class="precautions">
+        <li>Practice frequent hand washing. Wash hands with soap and water or use alcohol based hand rub.</li>
+        <li>Cover your nose and mouth with handkerchief / tissue while sneezing and coughing.</li>
+    </ol>
+    <h5 style="color: aqua; padding: 5px;">Dont's</h5>
+    <ol class="precautions">
+        <li>Have a close contact with anyone, if you're experiencing cough and fever.</li>
+        <li>Touch your eyes, nose and mouth.</li>
+    </ol>
+</div>
 
-    <div class="row  animated animatedFadeInUp fadeInUp col-find">
-        <div class="col-lg-6 col-md-12">
-            <div class="card" style="border: 0px;">
-                <div class="card-body india-case">
-                    <button style="width: 300px;" class=" butn btn btn-warning btn-block btn-lg">
-                        <h5> Confirmed cases: <span class="badge badge-light"><%=p.statewise[0].confirmed %></span>
-                        </h5>
-                    </button>
-                    <button style="width: 300px;" class=" butn btn btn-primary btn-block btn-lg">
-                        <h5> Active cases: <span class="badge badge-light"><%= p.statewise[0].active %></span></h5>
-                    </button>
-                    <button style="width: 300px;" class=" butn btn btn-danger btn-block btn-lg">
-                        <h5> Deaths cases: <span class="badge badge-light"><%= p.statewise[0].deaths %></span></h5>
-                    </button>
-                    <button style="width: 300px;" class=" butn btn btn-info btn-block btn-lg">
-                        <h5> Recovered cases: <span class="badge badge-light"><%= p.statewise[0].recovered %></span>
-                        </h5>
-                    </button>
-                    <button style="width: 300px;" class=" butn btn btn-secondary btn-block btn-lg">
-                        <h5> Migrated cases: <span class="badge badge-light">1</span></h5>
-                    </button>
-                </div>
-            </div>
-        </div>
+<div id="main" class="col-find">
+    <button class="openbtn" onclick="openNav()">☰ Precautions</button>
+</div>
 
-        <div class="col-lg-6 col-md-12 col-find" style="padding-top:15;">
-            <div class="card" style="border: 0px;">
-                <div class="card-body" style="padding-left: 25;width: 75%; text-align: justify;">
-                    <h5 class="card-title">Donate to PMNRF</h5>
-                    <p class="card-text">Prime Minister's National Relief Fund (PMNRF) was established entirely with
-                        public contributions and does not get any budgetary support.</p>
-                    <a href="https://pmnrf.gov.in/en/online-donation" target=_blank"" class="btn btn-primary">Donate</a>
-                </div>
+<button class="btn btn-danger" type="button" disabled>
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+    Live Updates
+</button>
+<br /><br />
+
+
+<div class="row  animated animatedFadeInUp fadeInUp col-find">
+    <div class="col-lg-6 col-md-12">
+        <div class="card" style="border: 0px;">
+            <div class="card-body india-case">
+                <button style="width: 300px;" class=" butn btn btn-warning btn-block btn-lg">
+                    <h5> Confirmed cases: <span class="badge badge-light"><%=p.statewise[0].confirmed %></span>
+                    </h5>
+                </button>
+                <button style="width: 300px;" class=" butn btn btn-primary btn-block btn-lg">
+                    <h5> Active cases: <span class="badge badge-light"><%= p.statewise[0].active %></span></h5>
+                </button>
+                <button style="width: 300px;" class=" butn btn btn-danger btn-block btn-lg">
+                    <h5> Deaths cases: <span class="badge badge-light"><%= p.statewise[0].deaths %></span></h5>
+                </button>
+                <button style="width: 300px;" class=" butn btn btn-info btn-block btn-lg">
+                    <h5> Recovered cases: <span class="badge badge-light"><%= p.statewise[0].recovered %></span>
+                    </h5>
+                </button>
+                <button style="width: 300px;" class=" butn btn btn-secondary btn-block btn-lg">
+                    <h5> Migrated cases: <span class="badge badge-light">1</span></h5>
+                </button>
             </div>
         </div>
     </div>
-    <br>
-    <div class="container1 col-find animated animatedFadeInUp fadeInUp">
-        <div class="box">
-        <canvas id="myChart" ></canvas>
-        </div>
-        <div  class="box">
-            <canvas id="myChart1"  ></canvas>
-        </div>
-        <div class="box">
-            <canvas id="myChart2"  ></canvas>
+
+    <div class="col-lg-6 col-md-12 col-find" style="padding-top:15;">
+        <div class="card" style="border: 0px;">
+            <div class="card-body" style="padding-left: 25;width: 75%; text-align: justify;">
+                <h5 class="card-title">Donate to PMNRF</h5>
+                <p class="card-text">Prime Minister's National Relief Fund (PMNRF) was established entirely with
+                    public contributions and does not get any budgetary support.</p>
+                <a href="https://pmnrf.gov.in/en/online-donation" target=_blank"" class="btn btn-primary">Donate</a>
+            </div>
         </div>
     </div>
-    <!-- <div class="marquee animated animatedFadeInUp fadeInUp">
+</div>
+<br>
+<div class="container1 col-find animated animatedFadeInUp fadeInUp">
+    <div class="box">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="box">
+        <canvas id="myChart1"></canvas>
+    </div>
+    <div class="box">
+        <canvas id="myChart2"></canvas>
+    </div>
+</div>
+<!-- <div class="marquee animated animatedFadeInUp fadeInUp">
         <p style="color: black;"> <strong><span class="badge badge-danger prec">PLEASE NOTE:</span></strong> <span class="badge badge-light">Don't go out much only one person from each family should take responsibility to go out and bring household materials.</span> <strong>||</strong> 
             <span class="badge badge-light prec">The person who goes out should wear a full arm shirt and shoes</span> <strong>||</strong> 
             <span class="badge badge-light prec">As soon as you enter home please keep your shoes outside don't wear the same inside the house. Immediately change your dress don't sit any where wearing the same dress. Take bath preferably head bath with soap.</span> <strong>||</strong> 
@@ -67,102 +90,103 @@
         </p>
     </div> -->
 <script>
-     var ctx = document.getElementById('myChart').getContext('2d');
-     var chart = new Chart(ctx, {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: <%- JSON.stringify(labels); %>,
+            labels: < % -JSON.stringify(labels); % > ,
             datasets: [{
                 label: 'Total Cases of Corona',
-                backgroundColor:"red",
-                borderColor:"white",
-                data: <%- JSON.stringify(data); %>,
+                backgroundColor: "red",
+                borderColor: "white",
+                data: < % -JSON.stringify(data); % > ,
             }]
         },
         options: {
-            responsive:true,
-        maintainAspectRatio:false,
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
-            xAxes: [{
-                gridLines: {
-                    display:false
-                }
-            }],
-            yAxes: [{
-                gridLines: {
-                    display:false
-                },
-            
-            }]
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display: false
+                    },
+
+                }]
+            }
         }
-    }
-});
+    });
 </script>
 
 <script>
     var ctx = document.getElementById('myChart1').getContext('2d');
     var chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: <%- JSON.stringify(state); %>,
-        datasets: [{
-            label: 'State Wise Data',
-            backgroundColor:"orange",
-            borderColor:"white",
-            data: <%- JSON.stringify(scase); %>,
-        }]
-    },
-        options: {
-            responsive:true,
-            maintainAspectRatio:false,
-            scales: {
-            xAxes: [{
-                gridLines: {
-                    display:false
-                }
-            }],
-            yAxes: [{
-                gridLines: {
-                    display:false
-                },
-            
+        type: 'bar',
+        data: {
+            labels: < % -JSON.stringify(state); % > ,
+            datasets: [{
+                label: 'State Wise Data',
+                backgroundColor: "orange",
+                borderColor: "white",
+                data: < % -JSON.stringify(scase); % > ,
             }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display: false
+                    },
+
+                }]
+            }
         }
-    }
-});
+    });
 </script>
 
 <script>
     var ctx = document.getElementById('myChart2').getContext('2d');
     var chart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Migrated','Active','Deaths','Recovered'],
-        datasets: [{
+        type: 'doughnut',
+        data: {
+            labels: ['Migrated', 'Active', 'Deaths', 'Recovered'],
+            datasets: [{
                 label: '',
-            data:[<%=1 %>,<%= p.statewise[0].active %>,<%= p.statewise[0].deaths %>,<%= p.statewise[0].recovered %>],
-            backgroundColor:[
-                "#FFC107",
-                "#007BFF",
-                "#DC3545",
-                "#17A2BB",
-                "#6C757D"
-            ],
-        }]
-    },
-        options: {
-            responsive:true,
-            maintainAspectRatio:false,
+                data: [ < %= 1 % > , < %= p.statewise[0].active % > , < %= p.statewise[0].deaths % > , <
+                    %= p.statewise[0].recovered % >
+                ],
+                backgroundColor: [
+                    "#FFC107",
+                    "#007BFF",
+                    "#DC3545",
+                    "#17A2BB",
+                    "#6C757D"
+                ],
+            }]
         },
-   }
-);
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        },
+    });
 </script>
 <br>
 <div class="tableFixHead">
     <table style="width: 100%; margin-left: auto; margin-right: auto;"
         class="table table-bordered table-striped table-hover table-warning  animated animatedFadeInUp fadeInUp">
         <thead class="thead-dark sticky">
-            <tr class="tableFixHead"> 
+            <tr class="tableFixHead">
                 <th scope="col ">State</th>
                 <th scope="col ">Active</th>
                 <th scope="col ">Confirmed</th>
@@ -201,12 +225,12 @@
         </tbody>
     </table>
 </div>
-    <div class="bottom-container col-find">
-        <!-- LinkedIn -->
-        <a class="footer-link" href="https://github.com/priteshsingh-vats/Covid-19-Monitor" target="_blank" rel="noopener"><i
-                class="fab fa-github fa-2x"></i></a>
-        <a class="footer-link" href="https://www.mohfw.gov.in" target="_blank" rel="noopener"><i
-                class="fas fa-info fa-2x"></i></a>
-        <a class="footer-link" href="#top"><i class="fas fa-arrow-up fa-2x"></i></a>
-    </div>
-    <%- include('partials/footer.ejs'); -%>
+<div class="bottom-container col-find">
+    <!-- LinkedIn -->
+    <a class="footer-link" href="https://github.com/priteshsingh-vats/Covid-19-Monitor" target="_blank"
+        rel="noopener"><i class="fab fa-github fa-2x"></i></a>
+    <a class="footer-link" href="https://www.mohfw.gov.in" target="_blank" rel="noopener"><i
+            class="fas fa-info fa-2x"></i></a>
+    <a class="footer-link" href="#top"><i class="fas fa-arrow-up fa-2x"></i></a>
+</div>
+<%- include('partials/footer.ejs'); -%>

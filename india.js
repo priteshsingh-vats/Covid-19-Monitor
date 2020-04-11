@@ -41,10 +41,10 @@ app.get("/",function(req,res)
      scase:scase,
   })
 });
-app.get("/precautions",function(req,res)
-{
-res.render("precautions.ejs");
-});
+// app.get("/precautions",function(req,res)
+// {
+// res.render("precautions.ejs");
+// });
 app.get("/Faq",function(req,res)
 {
 res.render("Faq.ejs");
@@ -53,10 +53,10 @@ app.get("/Resources",function(req,res)
 {
 res.render("Resources.ejs");
 });
-app.get("/visuals",function(req,res)
-{
-res.render("visuals.ejs");
-});
+// app.get("/visuals",function(req,res)
+// {
+// res.render("visuals.ejs");
+// });
 app.listen((process.env.PORT||3000),function()
 {
     console.log("The server has started");

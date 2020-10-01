@@ -24,11 +24,11 @@ request(options, function (error, response, body) {
         data[i-31-6*j] = p.cases_time_series[i].totalconfirmed;
         j++;
       }
- for(var i=1;i<p.statewise.length-22;i++)
- {
-   state[i-1]=p.statewise[i].statecode;
-   scase[i-1] =p.statewise[i].confirmed;
- }
+  for(var i = 1; i < p.statewise.length - 22; i++)
+  {
+    state[i-1]=p.statewise[i].statecode;
+    scase[i-1] =p.statewise[i].confirmed;
+  }
 });
 
 app.get("/",function(req,res)
@@ -41,10 +41,6 @@ app.get("/",function(req,res)
      scase:scase,
   })
 });
-// app.get("/precautions",function(req,res)
-// {
-// res.render("precautions.ejs");
-// });
 app.get("/Faq",function(req,res)
 {
 res.render("Faq.ejs");

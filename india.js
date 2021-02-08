@@ -41,13 +41,13 @@ app.get("/",function(req,res)
      scase:scase,
   })
 });
-app.get("/Faq",function(req,res)
+app.get("/faq",function(req,res)
 {
-res.render("Faq.ejs");
+res.render("faq.ejs");
 });
-app.get("/Resources",function(req,res)
+app.get("/resources",function(req,res)
 {
-res.render("Resources.ejs");
+res.render("resources.ejs");
 });
 app.get("/visuals",function(req,res)
 {

@@ -38,10 +38,10 @@ app.get("/", function (req, res) {
     scase: scase,
   })
 });
-app.get("/resources", function (req, res) {
+app.get("/Resources", function (req, res) {
   res.render("resources.ejs");
 });
-app.get("/faq", function (req, res) {
+app.get("/Faq", function (req, res) {
   res.render("faq.ejs");
 });
 app.get("/visuals", function (req, res) {
